@@ -1,0 +1,143 @@
+{
+  "name": "ARMGI9854WXZ59 Specials Master Arch Linux M9",
+  "image": "ghcr.io/archlinux/archlinux:base-devel",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "hostRequirements": {
+    "cpus": 4,
+    "memory": "16gb",
+    "storage": "32gb"
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:latest": {},
+    // "ghcr.io/devcontainers/features/desktop-lite:latest": {},
+    "./local-features/devcontainer": {}
+  },
+  "overrideFeatureInstallOrder": [
+    "ghcr.io/devcontainers/features/docker-in-docker:latest",
+   // "ghcr.io/devcontainers/features/desktop-lite:latest",
+    "./local-features/devcontainer"
+  ],
+  "remoteUser": "armgi9854wxz59",
+  "containerUser": "armgi9854wxz59",
+  "postCreateCommand": "mkdir -vp /home/armgi9854wxz59/ARMGI9854WXZ59/WX5MZ9/ && printf 'Environment ready!'",
+  "runArgs": [
+    "--shm-size=2g",
+    "--network=host"
+  ],
+  "forwardPorts": [
+    22,
+    3389,
+    9,
+    12,
+    59,
+    10480,
+    10481,
+    10482,
+    10483,
+    1337,
+    80,
+    443,
+    5938,
+    9999,
+    2589,
+    6080
+  ],
+  "portsAttributes": {
+    "22": {
+      "label": "SSH"
+    },
+    "3389": {
+      "label": "Remote Desktop"
+    },
+    "80": {
+      "label": "HTTP"
+    },
+    "443": {
+      "label": "HTTPS"
+    },
+    "5938": {
+      "label": "TeamViewer"
+    },
+    "9999": {
+      "label": "Custom Port"
+    },
+    "2589": {
+      "label": "Custom Port"
+    },
+    "6080": {
+      "label": "Vnc Desktop"
+    },
+    "10480": {
+      "label": "Custom Port"
+    },
+    "10481": {
+      "label": "Custom Port"
+    },
+    "10482": {
+      "label": "Custom Port"
+    },
+    "10483": {
+      "label": "Custom Port"
+    },
+    "1337": {
+      "label": "Custom Port"
+    },
+    "12": {
+      "label": "Custom Port"
+    }
+  },
+  "postStartCommand": "rm -vrf /workspaces/.codespaces/shared/editors && ./ARMGI9854WXZ59/WX5MZ9/ARMGI9854WXZ59_MsSaEW.sh",
+  "customizations": {
+    "codespaces": {
+      "repositories": {
+        "ghcr.io/devcontainers/features/docker-in-docker:latest": {
+          "permissions": "read-all"
+        },
+        "ghcr.io/devcontainers/features/desktop-lite:latest": {
+          "permissions": "read-all"
+        },
+        "devcontainers/feature-starter": {
+          "permissions": "read-all"
+        },
+      }
+    },
+    "vscode": {
+      "settings": {
+        "terminal.integrated.shell.linux": "/bin/zsh"
+      },
+      "extensions": [
+        "timonwong.shellcheck",
+        "danielsanmedium.dscodegpt",
+        "drcika.apc-extension",
+        "fredhappyface.linuxkeybindings",
+        "robbowen.synthwave-vscode",
+        "vscode-icons-team.vscode-icons",
+        "brandonkirbyson/vscode-animations",
+        "s-nlf-fh.glassit",
+        "hangxingliu.vscode-systemd-support",
+        "ms-vscode.cpptools",
+        "ms-vscode.cmake-tools",
+        "ms-python.python",
+        "ms-azuretools.vscode-docker".
+        "svelte.svelte-vscode",
+        "bradlc.vscode-tailwindcss@0.6.11",
+        "https://example.com/abc/releases/extension-0.26.0.vsix"
+      ]
+    },
+    "remoteEnv": {
+      "DISPLAY": ":1",
+      "TERM": "xterm-256color",
+      "SHELL": "/bin/zsh",
+      "QT_QPA_PLATFORM": "Wayland"
+    },
+    "mounts": [
+     // "source=/home/armgi9854wxz59/devcontainer_data,target=/workspaces,type=bind"
+    ],
+   // "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
+    "workspaceFolder": "/home/armgi9854wxz59/ARMGI9854WXZ59/WX5MZ9/",
+    "initializeCommand": "printf 'Initializing the Container Environment System setup...\\n'",
+    "postStartCommand": "printf 'Container Environment started and ready for use.\\n'"
+  }
+}
